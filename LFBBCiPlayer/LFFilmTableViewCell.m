@@ -18,7 +18,12 @@
 @implementation LFFilmTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    [super awakeFromNib];
+    
+    // Add a corner radius to the image view
+    self.filmImageView.layer.cornerRadius = self.filmImageView.frame.size.width / 2.0f;
+    // Apply the mask to the new layer corners
+    self.filmImageView.layer.masksToBounds = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
