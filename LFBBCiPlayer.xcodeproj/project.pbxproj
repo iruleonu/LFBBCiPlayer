@@ -15,6 +15,8 @@
 		B6E4EB0319E5EA89005EA359 /* LFBBCiPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E4EB0219E5EA89005EA359 /* LFBBCiPlayerTests.m */; };
 		B6E4EB1119E5EC4C005EA359 /* LFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E4EB1019E5EC4C005EA359 /* LFAppDelegate.m */; };
 		B6E4EB1419E5ECB2005EA359 /* LFRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E4EB1319E5ECB2005EA359 /* LFRootViewController.m */; };
+		B6E4EB1919E5EDDA005EA359 /* LFFilm.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E4EB1819E5EDDA005EA359 /* LFFilm.m */; };
+		B6E4EB1D19E5EE6B005EA359 /* LFFilmTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E4EB1C19E5EE6B005EA359 /* LFFilmTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,11 @@
 		B6E4EB1019E5EC4C005EA359 /* LFAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFAppDelegate.m; sourceTree = "<group>"; };
 		B6E4EB1219E5ECB2005EA359 /* LFRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFRootViewController.h; sourceTree = "<group>"; };
 		B6E4EB1319E5ECB2005EA359 /* LFRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFRootViewController.m; sourceTree = "<group>"; };
+		B6E4EB1719E5EDDA005EA359 /* LFFilm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFFilm.h; sourceTree = "<group>"; };
+		B6E4EB1819E5EDDA005EA359 /* LFFilm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFFilm.m; sourceTree = "<group>"; };
+		B6E4EB1A19E5EE30005EA359 /* LFFilmCellViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFFilmCellViewModelProtocol.h; sourceTree = "<group>"; };
+		B6E4EB1B19E5EE6B005EA359 /* LFFilmTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFFilmTableViewCell.h; sourceTree = "<group>"; };
+		B6E4EB1C19E5EE6B005EA359 /* LFFilmTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFFilmTableViewCell.m; sourceTree = "<group>"; };
 		E809967697A54B7562B01C01 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		ED4773F3B7582896F2CE04D7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -163,6 +170,7 @@
 		B6E4EB0E19E5EBFC005EA359 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B6E4EB1E19E5EEA2005EA359 /* Cells */,
 				B6E4EB1219E5ECB2005EA359 /* LFRootViewController.h */,
 				B6E4EB1319E5ECB2005EA359 /* LFRootViewController.m */,
 			);
@@ -172,6 +180,9 @@
 		B6E4EB1519E5ED11005EA359 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B6E4EB1719E5EDDA005EA359 /* LFFilm.h */,
+				B6E4EB1819E5EDDA005EA359 /* LFFilm.m */,
+				B6E4EB1A19E5EE30005EA359 /* LFFilmCellViewModelProtocol.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -181,6 +192,15 @@
 			children = (
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		B6E4EB1E19E5EEA2005EA359 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B6E4EB1B19E5EE6B005EA359 /* LFFilmTableViewCell.h */,
+				B6E4EB1C19E5EE6B005EA359 /* LFFilmTableViewCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +339,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6E4EB1419E5ECB2005EA359 /* LFRootViewController.m in Sources */,
+				B6E4EB1D19E5EE6B005EA359 /* LFFilmTableViewCell.m in Sources */,
+				B6E4EB1919E5EDDA005EA359 /* LFFilm.m in Sources */,
 				B6E4EB1119E5EC4C005EA359 /* LFAppDelegate.m in Sources */,
 				B6E4EAE919E5EA89005EA359 /* main.m in Sources */,
 			);
