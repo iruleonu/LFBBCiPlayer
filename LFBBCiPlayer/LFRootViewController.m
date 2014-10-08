@@ -8,6 +8,7 @@
 
 #import "LFRootViewController.h"
 #import "LFFilmTableViewCell.h"
+#import "LFFilmsDataSource.h"
 
 static NSString *const LFFilmCellIdentifier = @"LFFilmCellIdentifier";
 
@@ -21,7 +22,17 @@ static NSString *const LFFilmCellIdentifier = @"LFFilmCellIdentifier";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //TODO: Do the stuff to fill the array
+    __unsafe_unretained typeof(self) weekSelf = self;
+    [LFFilmsDataSource filmsWithCompletionBlock:^(NSArray *films, NSError *error) {
+        LFRootViewController *strongSelf = weekSelf;
+        
+        if (strongSelf) {
+            // TODO: Handle the NSError
+            
+            strongSelf.films = films;
+            [strongSelf.tableView reloadData];
+        }
+    }];
 }
 
 #pragma mark - UITableViewDataSource
