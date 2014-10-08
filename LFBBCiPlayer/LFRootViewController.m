@@ -20,6 +20,8 @@ static NSString *const LFFilmCellIdentifier = @"LFFilmCellIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //TODO: Do the stuff to fill the array
 }
 
 #pragma mark - UITableViewDataSource

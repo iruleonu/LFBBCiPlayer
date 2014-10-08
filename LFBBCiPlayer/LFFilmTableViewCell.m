@@ -25,6 +25,8 @@
     [super setSelected:selected animated:animated];
 }
 
+#pragma mark - Setup
+
 - (void)updateWithFilm:(id<LFFilmCellViewModelProtocol>)film
 {
     self.filmNameLabel.text = film.title;

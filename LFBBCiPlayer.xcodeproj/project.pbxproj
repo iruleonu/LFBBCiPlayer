@@ -17,6 +17,9 @@
 		B6E4EB1419E5ECB2005EA359 /* LFRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E4EB1319E5ECB2005EA359 /* LFRootViewController.m */; };
 		B6E4EB1919E5EDDA005EA359 /* LFFilm.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E4EB1819E5EDDA005EA359 /* LFFilm.m */; };
 		B6E4EB1D19E5EE6B005EA359 /* LFFilmTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E4EB1C19E5EE6B005EA359 /* LFFilmTableViewCell.m */; };
+		B6E4EB2119E5F1F3005EA359 /* LFFilmsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E4EB2019E5F1F3005EA359 /* LFFilmsDataSource.m */; };
+		B6E4EB2419E5F279005EA359 /* LFFilmsDataSource+Web.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E4EB2319E5F279005EA359 /* LFFilmsDataSource+Web.m */; };
+		B6E4EB2719E5F2EF005EA359 /* LFFilmsDataSource+Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E4EB2619E5F2EF005EA359 /* LFFilmsDataSource+Parser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,12 @@
 		B6E4EB1A19E5EE30005EA359 /* LFFilmCellViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFFilmCellViewModelProtocol.h; sourceTree = "<group>"; };
 		B6E4EB1B19E5EE6B005EA359 /* LFFilmTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFFilmTableViewCell.h; sourceTree = "<group>"; };
 		B6E4EB1C19E5EE6B005EA359 /* LFFilmTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFFilmTableViewCell.m; sourceTree = "<group>"; };
+		B6E4EB1F19E5F1F3005EA359 /* LFFilmsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFFilmsDataSource.h; sourceTree = "<group>"; };
+		B6E4EB2019E5F1F3005EA359 /* LFFilmsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFFilmsDataSource.m; sourceTree = "<group>"; };
+		B6E4EB2219E5F279005EA359 /* LFFilmsDataSource+Web.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LFFilmsDataSource+Web.h"; sourceTree = "<group>"; };
+		B6E4EB2319E5F279005EA359 /* LFFilmsDataSource+Web.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LFFilmsDataSource+Web.m"; sourceTree = "<group>"; };
+		B6E4EB2519E5F2EF005EA359 /* LFFilmsDataSource+Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LFFilmsDataSource+Parser.h"; sourceTree = "<group>"; };
+		B6E4EB2619E5F2EF005EA359 /* LFFilmsDataSource+Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LFFilmsDataSource+Parser.m"; sourceTree = "<group>"; };
 		E809967697A54B7562B01C01 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		ED4773F3B7582896F2CE04D7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -153,6 +162,8 @@
 			children = (
 				B6E4EB1619E5ED1F005EA359 /* Categories */,
 				B6E4EB1519E5ED11005EA359 /* Model */,
+				B6E4EB1F19E5F1F3005EA359 /* LFFilmsDataSource.h */,
+				B6E4EB2019E5F1F3005EA359 /* LFFilmsDataSource.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -190,6 +201,10 @@
 		B6E4EB1619E5ED1F005EA359 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				B6E4EB2219E5F279005EA359 /* LFFilmsDataSource+Web.h */,
+				B6E4EB2319E5F279005EA359 /* LFFilmsDataSource+Web.m */,
+				B6E4EB2519E5F2EF005EA359 /* LFFilmsDataSource+Parser.h */,
+				B6E4EB2619E5F2EF005EA359 /* LFFilmsDataSource+Parser.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -339,9 +354,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6E4EB1419E5ECB2005EA359 /* LFRootViewController.m in Sources */,
+				B6E4EB2419E5F279005EA359 /* LFFilmsDataSource+Web.m in Sources */,
 				B6E4EB1D19E5EE6B005EA359 /* LFFilmTableViewCell.m in Sources */,
 				B6E4EB1919E5EDDA005EA359 /* LFFilm.m in Sources */,
 				B6E4EB1119E5EC4C005EA359 /* LFAppDelegate.m in Sources */,
+				B6E4EB2719E5F2EF005EA359 /* LFFilmsDataSource+Parser.m in Sources */,
+				B6E4EB2119E5F1F3005EA359 /* LFFilmsDataSource.m in Sources */,
 				B6E4EAE919E5EA89005EA359 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
