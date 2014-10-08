@@ -9,6 +9,7 @@
 #import "LFRootViewController.h"
 #import "LFFilmTableViewCell.h"
 #import "LFFilmsDataSource.h"
+#import "LFFilm.h"
 
 static NSString *const LFFilmCellIdentifier = @"LFFilmCellIdentifier";
 
@@ -31,8 +32,10 @@ static NSString *const LFFilmCellIdentifier = @"LFFilmCellIdentifier";
         if (strongSelf) {
             // TODO: Handle the NSError
             
-            // Set the films
-            strongSelf.films = films;
+            // Sort the films and set them
+            strongSelf.films = [films sortedArrayUsingFunction:alphabeticSort
+                                                         context:NULL
+                                                            hint:[films sortedArrayHint]];
             
             // Set the sizes of the table view to deal with the different resolutions
             self.tableHeightConstraint.constant = strongSelf.tableView.superview.frame.size.height;
@@ -64,6 +67,24 @@ static NSString *const LFFilmCellIdentifier = @"LFFilmCellIdentifier";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 100.0;
+}
+
+#pragma mark - Custom
+
+NSComparisonResult alphabeticSort(id film1, id film2, void *reverse)
+{
+    NSComparisonResult aux;
+    
+    if([film1 isKindOfClass:[LFFilm class]] && [film2 isKindOfClass:[LFFilm class]]) {
+        LFFilm *castOne = film1;
+        LFFilm *castTwo = film2;
+        aux = [castOne.title localizedCaseInsensitiveCompare:castTwo.title];
+    }
+    else {
+        aux = NSOrderedSame;
+    }
+    
+    return aux;
 }
 
 @end
