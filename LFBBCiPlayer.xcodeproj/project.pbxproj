@@ -171,7 +171,7 @@
 		B6E4EB0D19E5EBF7005EA359 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B6E4EAF019E5EA89005EA359 /* Main.storyboard */,
+				B6E4EB2819E5F674005EA359 /* Storyboard */,
 				B6E4EAF319E5EA89005EA359 /* Images.xcassets */,
 				B6E4EAF519E5EA89005EA359 /* LaunchScreen.xib */,
 			);
@@ -216,6 +216,14 @@
 				B6E4EB1C19E5EE6B005EA359 /* LFFilmTableViewCell.m */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		B6E4EB2819E5F674005EA359 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B6E4EAF019E5EA89005EA359 /* Main.storyboard */,
+			);
+			name = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

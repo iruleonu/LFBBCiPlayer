@@ -13,7 +13,9 @@
 static NSString *const LFFilmCellIdentifier = @"LFFilmCellIdentifier";
 
 @interface LFRootViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *tableHeightConstraint;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *tableWidthConstraint;
 @property (nonatomic, strong) NSArray *films;
 @end
 
@@ -29,7 +31,15 @@ static NSString *const LFFilmCellIdentifier = @"LFFilmCellIdentifier";
         if (strongSelf) {
             // TODO: Handle the NSError
             
+            // Set the films
             strongSelf.films = films;
+            
+            // Set the sizes of the table view to deal with the different resolutions
+            self.tableHeightConstraint.constant = strongSelf.tableView.superview.frame.size.height;
+            self.tableWidthConstraint.constant = strongSelf.tableView.superview.frame.size.width;
+            [strongSelf.tableView needsUpdateConstraints];
+            
+            // Reload the table view with the new films
             [strongSelf.tableView reloadData];
         }
     }];

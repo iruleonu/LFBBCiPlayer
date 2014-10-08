@@ -24,6 +24,9 @@
     self.filmImageView.layer.cornerRadius = self.filmImageView.frame.size.width / 2.0f;
     // Apply the mask to the new layer corners
     self.filmImageView.layer.masksToBounds = YES;
+    
+    // Keep the aspect ratio of the soon to be added image
+    self.filmImageView.contentMode = UIViewContentModeScaleAspectFill;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

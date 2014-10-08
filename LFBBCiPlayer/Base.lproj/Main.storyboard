@@ -17,25 +17,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pj0-ok-waz">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pj0-ok-waz">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="480" id="ZvW-1b-sKA"/>
+                                    <constraint firstAttribute="width" constant="600" id="bCn-8E-fPd"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LFFilmCellIdentifier" rowHeight="100" id="sCu-GY-7uG" customClass="LFFilmTableViewCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sCu-GY-7uG" id="XZ5-Av-sFN">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZLS-dK-fnM">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZLS-dK-fnM">
                                                     <rect key="frame" x="0.0" y="0.0" width="99" height="99"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="99" id="fDw-Og-lY7"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSF-aZ-BYw">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSF-aZ-BYw">
                                                     <rect key="frame" x="107" y="39" width="493" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MSF-aZ-BYw" firstAttribute="centerY" secondItem="ZLS-dK-fnM" secondAttribute="centerY" id="2bI-uI-lKN"/>
+                                                <constraint firstItem="ZLS-dK-fnM" firstAttribute="leading" secondItem="XZ5-Av-sFN" secondAttribute="leading" id="9nh-6t-T6y"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZLS-dK-fnM" secondAttribute="bottom" id="CyH-eE-6yH"/>
+                                                <constraint firstItem="ZLS-dK-fnM" firstAttribute="top" secondItem="XZ5-Av-sFN" secondAttribute="top" id="bx4-p2-iGA"/>
+                                                <constraint firstAttribute="trailing" secondItem="MSF-aZ-BYw" secondAttribute="trailing" id="dsO-RI-yn0"/>
+                                                <constraint firstItem="MSF-aZ-BYw" firstAttribute="leading" secondItem="ZLS-dK-fnM" secondAttribute="trailing" constant="8" symbolic="YES" id="fOp-ti-GP5"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="filmImageView" destination="ZLS-dK-fnM" id="aS3-hP-j3k"/>
@@ -50,9 +65,15 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pj0-ok-waz" firstAttribute="leading" secondItem="jyV-Pf-zRb" secondAttribute="leading" id="Mth-GQ-nrq"/>
+                            <constraint firstItem="pj0-ok-waz" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="PcB-TG-1SD"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="tableHeightConstraint" destination="ZvW-1b-sKA" id="cDf-15-id8"/>
                         <outlet property="tableView" destination="pj0-ok-waz" id="PJ2-UA-Fqf"/>
+                        <outlet property="tableWidthConstraint" destination="bCn-8E-fPd" id="FcO-1D-RWY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
