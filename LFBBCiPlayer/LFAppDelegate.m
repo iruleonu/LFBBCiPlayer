@@ -1,18 +1,18 @@
 //
-//  AppDelegate.m
+//  LFAppDelegate.m
 //  LFBBCiPlayer
 //
 //  Created by Nuno Salvador on 08/10/14.
 //  Copyright (c) 2014 Nuno Salvador. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "LFAppDelegate.h"
 
-@interface AppDelegate ()
+@interface LFAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation LFAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

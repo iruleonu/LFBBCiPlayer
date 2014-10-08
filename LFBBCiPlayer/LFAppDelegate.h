@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  LFAppDelegate.h
 //  LFBBCiPlayer
 //
 //  Created by Nuno Salvador on 08/10/14.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface LFAppDelegate : UIResponder <UIApplicationDelegate>
 
+@property (strong, nonatomic) UIWindow *window;
 
 @end
-
