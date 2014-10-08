@@ -12,6 +12,7 @@
 
 @interface LFFilmTableViewCell ()
 @property (nonatomic, weak) IBOutlet UIImageView *filmImageView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic, weak) IBOutlet UILabel *filmNameLabel;
 @end
 
@@ -35,11 +36,36 @@
 
 #pragma mark - Setup
 
+- (void)showAndStartNetworkIndicator
+{
+    [self.activityIndicatorView startAnimating];
+    self.activityIndicatorView.alpha = 1.0f;
+}
+
+- (void)hideAndStopNetworkIndicator
+{
+    [self.activityIndicatorView stopAnimating];
+    self.activityIndicatorView.alpha = 0.0f;
+}
+
 - (void)updateWithFilm:(id<LFFilmCellViewModelProtocol>)film
 {
     self.filmNameLabel.text = film.title;
-    [self.filmImageView setImageWithURL:film.photoURL
-                       placeholderImage:[UIImage imageNamed:@"placeholder1"]];
+    
+    // Start animating and wait for the completion blocks to switch it off
+    [self showAndStartNetworkIndicator];
+    
+    // Do the request using AFNetworking category on top of the UIImageView
+    [self.filmImageView setImageWithURLRequest:[NSURLRequest requestWithURL:film.photoURL]
+                              placeholderImage:[UIImage imageNamed:@"placeholder1"]
+                                       success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                           self.filmImageView.image = image;
+                                           [self hideAndStopNetworkIndicator];
+                              } 
+                              failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+                                  //TODO: set a error image
+                                  [self hideAndStopNetworkIndicator];
+                              }];
 }
 
 @end

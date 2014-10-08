@@ -42,6 +42,9 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="FUr-3h-aas">
+                                                    <rect key="frame" x="39" y="40" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="MSF-aZ-BYw" firstAttribute="centerY" secondItem="ZLS-dK-fnM" secondAttribute="centerY" id="2bI-uI-lKN"/>
@@ -53,6 +56,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="activityIndicatorView" destination="FUr-3h-aas" id="P0W-F4-e18"/>
                                             <outlet property="filmImageView" destination="ZLS-dK-fnM" id="aS3-hP-j3k"/>
                                             <outlet property="filmNameLabel" destination="MSF-aZ-BYw" id="vt5-XS-Ryp"/>
                                         </connections>
