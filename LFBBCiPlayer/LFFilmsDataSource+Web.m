@@ -9,7 +9,9 @@
 #import "LFFilmsDataSource+Web.h"
 #import "LFFilmsDataSource+Parser.h"
 
-static NSString *const LFFilmsEndPoint = @"http://feeds.bbc.co.uk/iplayer/categories/films/tv/list";
+// Good old films endpoint (http://feeds.bbc.co.uk/iplayer/categories/films/tv/list) was terminated
+// Use this news endpoint output backup (found on google) with the same format
+static NSString *const LFFilmsEndPoint = @"http://pastebin.com/raw.php?i=KfwehGpM";
 
 @implementation LFFilmsDataSource (Web)
 
@@ -21,7 +23,7 @@ static NSString *const LFFilmsEndPoint = @"http://feeds.bbc.co.uk/iplayer/catego
     [[session dataTaskWithURL:productsEndPointURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                completionBlock(nil,error);
+                completionBlock(nil, error);
             });
         }
         else {

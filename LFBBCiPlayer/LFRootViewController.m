@@ -28,11 +28,10 @@ static NSString *const LFFilmCellIdentifier = @"LFFilmCellIdentifier";
     __unsafe_unretained typeof(self) weekSelf = self;
     [LFFilmsDataSource filmsWithCompletionBlock:^(NSArray *films, NSError *error) {
         LFRootViewController *strongSelf = weekSelf;
-        
-        if (strongSelf) {
-            // TODO: Handle the NSError
-            
-            // Sort the films and set them
+		
+		// TODO: Handle the NSError
+        if (strongSelf && !error) {
+			// Sort the films and set them
             strongSelf.films = [films sortedArrayUsingFunction:alphabeticSort
                                                          context:NULL
                                                             hint:[films sortedArrayHint]];

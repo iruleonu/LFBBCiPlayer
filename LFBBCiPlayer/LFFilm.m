@@ -40,9 +40,18 @@
 
 - (NSURL *)photoURL
 {
-    NSURLComponents *components = [[NSURLComponents alloc] initWithString:self.thumbnail];
-    [components setScheme:@"http"];
-    return components.URL;
+	NSURLComponents *components;
+	
+	// Null fail-safe for the nil thumbnail
+	if(self.thumbnail) {
+		components = [[NSURLComponents alloc] initWithString:self.thumbnail];
+	}
+	else {
+		components = [[NSURLComponents alloc] init];
+	}
+	
+	[components setScheme:@"http"];
+	return components.URL;
 }
 
 @end
