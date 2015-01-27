@@ -31,11 +31,16 @@ static NSString *const LFFilmCellIdentifier = @"LFFilmCellIdentifier";
 		
 		// TODO: Handle the NSError
         if (strongSelf && !error) {
-			// Sort the films and set them
-            strongSelf.films = [films sortedArrayUsingFunction:alphabeticSort
-                                                         context:NULL
-                                                            hint:[films sortedArrayHint]];
-            
+			// Version A
+			strongSelf.films = films;
+			
+			/*
+			// Version B: Sort the films and set them
+			strongSelf.films = [films sortedArrayUsingFunction:alphabeticSort
+			context:NULL
+			hint:[films sortedArrayHint]];
+			*/
+			
             // Set the sizes of the table view to deal with the different resolutions
             self.tableHeightConstraint.constant = strongSelf.tableView.superview.frame.size.height;
             self.tableWidthConstraint.constant = strongSelf.tableView.superview.frame.size.width;
